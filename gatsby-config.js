@@ -1,22 +1,20 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "My Gatsby Site",
+    title: `patentpc`,
+    description: `Lawyer Website`,
+    author: `Bao Tran`,
   },
   plugins: [
     {
       resolve: "gatsby-source-wordpress",
       options: {
-        url: "",
+        url: process.env.WORDPRESS_URL,
       },
     },
     "gatsby-plugin-sass",
-    {
-      resolve: "gatsby-plugin-google-analytics",
-      options: {
-        trackingId: "",
-      },
-    },
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
@@ -30,20 +28,13 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: "gatsby-source-graphql",
       options: {
-        name: "images",
-        path: "./src/images/",
+        typeName: "WPGraphQL",
+        fieldName: "wpgraphql",
+        url: process.env.WORDPRESS_URL,
       },
-      __key: "images",
     },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "pages",
-        path: "./src/pages/",
-      },
-      __key: "pages",
-    },
+    "gatsby-source-fontawesome",
   ],
 };
