@@ -1,3 +1,30 @@
+@import "@fortawesome/fontawesome-svg-core/styles.css";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 16px;
+    padding-top: 60px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+        "Droid Sans", "Helvetica Neue", sans-serif;
+}
+h1 {
+    font-size: 50px;
+}
+h2 {
+    font-size: 40px;
+}
+h3 {
+    font-size: 30px;
+}
+h4 {
+    font-size: 25px;
+}
+h5 {
+    font-size: 20px;
+}
 img {
     max-width: 100%;
 }
@@ -8,6 +35,9 @@ img {
 .btn-outline-danger {
     color: #d62d2d;
     border-color: #d62d2d;
+    &:hover {
+        background: #d62d2d;
+    }
 }
 .telephone {
     a {
@@ -36,6 +66,65 @@ img {
         margin: auto;
         width: 100%;
         z-index: 99;
+    }
+}
+.client-pic {
+    max-width: 150px;
+}
+.react-multi-carousel-track {
+    align-items: center;
+    padding: 0 20px;
+}
+.service {
+    .react-multi-carousel-track {
+        margin-bottom: 50px;
+    }
+}
+.testimonial-outr {
+    .service-outr {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    .react-multiple-carousel__arrow--right {
+        right: 0;
+    }
+    .react-multiple-carousel__arrow--left {
+        left: 0;
+    }
+    .react-multiple-carousel__arrow {
+        border-radius: 0;
+        background: #d62d2d;
+        &:hover {
+            background: #d62d2d;
+        }
+    }
+    .clientsimage {
+        width: 195px;
+        height: 195px;
+        border-radius: 100%;
+        overflow: hidden;
+        display: inline-block;
+        img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+.testimonial {
+    position: relative;
+    border-top: 1px solid #fff0f0;
+    border-bottom: 1px solid #fff0f0;
+    &:after {
+        content: "";
+        position: absolute;
+        clip-path: polygon(53% 0, 100% 0, 100% 100%, 0% 100%);
+        z-index: -1;
+        background: #fff0f0;
+        width: 70%;
+        top: 0;
+        right: 0;
+        height: 100%;
     }
 }
 @media only screen and (max-width: 767px) {

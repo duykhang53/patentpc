@@ -29,7 +29,7 @@ const Header = () => {
     const data = useStaticQuery(getdata);
     const datamenu = data.wpgraphql.menu.menuItems.nodes;
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
             <Container>
                 <Navbar.Brand>
                     <Link to="/" >
