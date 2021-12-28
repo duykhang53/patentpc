@@ -184,6 +184,7 @@ const Home = () => {
                         <img src={tData.testimonialicon.sourceUrl} alt={tData.testimonialicon.id} />
                       </figure>
                       <h6 className="h6 my-3">{tData.heading}</h6>
+                      <small>{tData.subheading}</small>
                     </div>
                   ))}
                 </TestimonialCarousel>
