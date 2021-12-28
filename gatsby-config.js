@@ -6,6 +6,7 @@ module.exports = {
     title: `patentpc`,
     description: `Lawyer Website`,
     author: `Bao Tran`,
+    siteUrl
   },
   plugins: [
     {
@@ -17,7 +18,6 @@ module.exports = {
     "gatsby-plugin-sass",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
