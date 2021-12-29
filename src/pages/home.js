@@ -122,7 +122,7 @@ const Home = () => {
                 </h2>
                 <div className="row">
                   <Carousel responsive={responsive}>{iplogo.map(images => (
-                    <div className="px-3 text-center client-pic mx-auto" key={images.ipimage.id}> <img src={images.ipimage.sourceUrl} /></div>
+                    <div className="text-center client-pic mx-auto" key={images.ipimage.id}> <img src={images.ipimage.sourceUrl} alt={images.ipimage.id} /></div>
                   ))}
                   </Carousel>
                 </div>
@@ -222,7 +222,7 @@ const Home = () => {
                         <div className="card-body">
                           <h6 className="display-6 my-3">{wData.worksheading}</h6>
                           <p>{wData.worksparagraph}</p>
-                          <Link to={wData.workslink.url} className="btn btn-outline-danger">Read More...</Link>
+                          <Link to={wData.workslink.url} className="btn btn-outline-danger btn-sm">Read More...</Link>
                         </div>
                       </div>
                     </div>
