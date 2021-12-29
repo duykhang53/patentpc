@@ -222,7 +222,7 @@ const Home = () => {
                         <div className="card-body">
                           <h6 className="display-6 my-3">{wData.worksheading}</h6>
                           <p>{wData.worksparagraph}</p>
-                          <Link to={wData.workslink.url} className="btn btn-outline-danger btn-sm">Read More...</Link>
+                          <Link to={wData.workslink.url} target="_blank" className="btn btn-outline-danger btn-sm">Read More...</Link>
                         </div>
                       </div>
                     </div>
