@@ -51,6 +51,18 @@ const getdata = graphql`{
           paragraph
           serviceicon
         }
+        works {
+          worksparagraph
+          worksheading
+          sampleworksimages {
+            sourceUrl
+            id
+          }
+          workslink {
+            title
+            url
+          }
+        }
       }
     }
   } 
@@ -63,6 +75,7 @@ const Home = () => {
   const advLegal = data.wpgraphql.page.homepage.advancedLegaltech;
   const servicesData = data.wpgraphql.page.homepage.services;
   const testimonialData = data.wpgraphql.page.homepage.testimonial;
+  const worksData = data.wpgraphql.page.homepage.works;
 
   const responsive = {
     superLargeDesktop: {
@@ -158,7 +171,6 @@ const Home = () => {
                     <h4 className="h4 my-3">{sData.heading}</h4>
                     <p>{sData.paragraph}</p>
                     <Link to={sData.button} className="btn btn-danger" role="button" target="_blank">Read More</Link>
-
                   </div>
                 ))}
                 </Carousel>
@@ -171,9 +183,8 @@ const Home = () => {
             <div className="row mb-5">
               <div className="col-md-12 text-center my-5">
                 <h2 className="mb-4 display-3">
-                  SAMPLES OF OUR WORKS
+                  Testimonials
                 </h2>
-                <p className="h3 mb-5">We work with many inventors and entrepreneurs to protect their IP properties</p>
               </div>
               <div className="col-md-12 text-center">
                 <TestimonialCarousel>
@@ -188,6 +199,36 @@ const Home = () => {
                     </div>
                   ))}
                 </TestimonialCarousel>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="works py-5 bg-light">
+          <div className="container">
+            <div className="row mb-5">
+              <div className="col-md-12 text-center my-5">
+                <h2 className="mb-4 display-3">
+                  SAMPLES OF OUR WORKS
+                </h2>
+                <p className="h3 mb-5">We work with many inventors and entrepreneurs to protect their IP properties</p>
+              </div>
+              <div className="col-md-12 text-center">
+                <div className="row">
+                  {worksData.map((wData, index) => (
+                    <div key={index} className="work-outr col-md-4 mb-5">
+                      <div className="card">
+                        <figure className="card-img-top">
+                          <img src={wData.sampleworksimages.sourceUrl} alt={wData.sampleworksimages.id} />
+                        </figure>
+                        <div className="card-body">
+                          <h6 className="display-6 my-3">{wData.worksheading}</h6>
+                          <p>{wData.worksparagraph}</p>
+                          <Link to={wData.workslink.url} className="btn btn-outline-danger">Read More...</Link>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

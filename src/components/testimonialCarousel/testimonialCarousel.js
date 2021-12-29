@@ -1,40 +1,24 @@
 import React from 'react'
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-
+import Slider from "react-slick";
+import "../../react-slick/css/slick.scss";
+import "../../react-slick/css/theme.scss";
 
 const TestimonialCarousel = ({ children }) => {
-    const responsive = {
-        superLargeDesktop: {
-            // the naming can be any, depends on you.
-            breakpoint: { max: 4000, min: 3000 },
-            items: 1
-        },
-        desktop: {
-            breakpoint: { max: 3000, min: 1024 },
-            items: 1
-        },
-        tablet: {
-            breakpoint: { max: 1024, min: 600 },
-            items: 1
-        },
-        mobile: {
-            breakpoint: { max: 600, min: 0 },
-            items: 1
-        }
+    const settings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        adaptiveHeight: true
     };
     return (
         <div className='testimonial-outr'>
-            <Carousel
-                responsive={responsive}
-                showDots={false}
-                ssr={true}
-                dotListClass="custom-dot-list-style"
-                itemClass="pe-5 align-self-start"
-                arrows={true}
+            <Slider
+                {...settings}
             >
                 {children}
-            </Carousel>
+            </Slider >
         </div>
     )
 }
