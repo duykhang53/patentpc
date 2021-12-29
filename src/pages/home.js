@@ -1,6 +1,5 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import Layout from '../components/layout';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import TestimonialCarousel from "../components/testimonialCarousel/testimonialCarousel";
@@ -99,7 +98,7 @@ const Home = () => {
 
   return (
     <>
-      <Layout>
+      <>
         <Seo title="Home" />
         <div className="banner-main">
           <img src={common.banner.bannerimage.sourceUrl} alt={common.banner.bannerimage.title} />
@@ -233,7 +232,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </Layout>
+      </>
     </>
   )
 }
