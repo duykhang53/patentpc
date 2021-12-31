@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import emailjs from 'emailjs-com'
 import { init } from '@emailjs/browser';
 import Layout from '../components/layout';
+import ReCAPTCHA from 'react-google-recaptcha';
+
 init("user_ASXLmERL5ByrsNmHHTr9A");
 
 const Contact = () => {
