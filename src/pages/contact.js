@@ -4,7 +4,7 @@ import { init } from '@emailjs/browser';
 import Layout from '../components/layout';
 init("user_ASXLmERL5ByrsNmHHTr9A");
 
-const Contact = () => {
+const Contact = (captchaValue) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
@@ -18,7 +18,8 @@ const Contact = () => {
             const templateParams = {
                 name,
                 email,
-                message
+                message,
+                 'g-recaptcha-response': captchaValue,
             };
 
             emailjs.send(serviceId, templateId, templateParams, userId)
@@ -43,6 +44,10 @@ const Contact = () => {
                             <input type="text" placeholder="Your Name" value={name} onChange={e => setName(e.target.value)} />
                             <input type="email" placeholder="Your email address" value={email} onChange={e => setEmail(e.target.value)} />
                             <textarea placeholder="Your message" value={message} onChange={e => setMessage(e.target.value)}></textarea>
+                            <ReCAPTCHA
+                               sitekey={process.env.CAPTCHA_SITE_KEY}
+                               onChange={submit}
+                            />
                             <button onClick={submit}>Send Message</button>
 
                             <span className={emailSent ? 'visible' : null}>Thank you for your message, we will be in touch in no time!</span>
