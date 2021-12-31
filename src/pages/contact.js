@@ -4,13 +4,13 @@ import { init } from '@emailjs/browser';
 import Layout from '../components/layout';
 init("user_ASXLmERL5ByrsNmHHTr9A");
 
-const Contact = (captchaValue) => {
+const Contact = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
     const [emailSent, setEmailSent] = useState(false);
 
-    const submit = () => {
+    const submit = (captchaValue) => {
         if (name && email && message) {
             const serviceId = 'service_9v5qyj8';
             const templateId = 'template_t3frd2p';
