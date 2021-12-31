@@ -165,6 +165,48 @@ img {
         }
     }
 }
+
+#contact-form {
+    font-family: sans-serif;
+    padding: 20px;
+
+    input,
+    textarea {
+        width: 100%;
+        border: 0;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        margin-bottom: 15px;
+    }
+
+    textarea {
+        height: 100px;
+        resize: vertical;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        border: 0;
+        cursor: pointer;
+        background: #fca253;
+        font-weight: bold;
+        color: #fff;
+        font-size: 18px;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+    }
+
+    span {
+        display: none;
+        text-align: center;
+
+        &.visible {
+            display: block;
+        }
+    }
+}
+
 @media (min-width: 1200px) {
     .display-6 {
         font-size: 2.2rem;

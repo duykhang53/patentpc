@@ -191,7 +191,7 @@ const Home = () => {
                     <div key={index} className="service-outr align-self-start">
                       <p className="mb-5 display-6">{tData.paragraph}</p>
                       <figure className="clientsimage">
-                        <img src={tData.testimonialicon.sourceUrl} alt='testimonial' />
+                        <img src={tData.testimonialicon.sourceUrl} alt={tData.testimonialicon.id} />
                       </figure>
                       <h6 className="h6 my-3">{tData.heading}</h6>
                       <small>{tData.subheading}</small>
