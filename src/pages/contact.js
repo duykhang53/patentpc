@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import emailjs from 'emailjs-com'
 import { init } from '@emailjs/browser';
 import Layout from '../components/layout';
+import ReCAPTCHA from 'react-google-recaptcha';
 init("user_ASXLmERL5ByrsNmHHTr9A");
 
 const Contact = () => {
@@ -10,7 +11,7 @@ const Contact = () => {
     const [message, setMessage] = useState('');
     const [emailSent, setEmailSent] = useState(false);
 
-    const submit = () => {
+    const submit = (captchaValue) => {
         if (name && email && message) {
             const serviceId = 'service_9v5qyj8';
             const templateId = 'template_t3frd2p';
@@ -18,7 +19,8 @@ const Contact = () => {
             const templateParams = {
                 name,
                 email,
-                message
+                message,
+                'g-recaptcha-response': captchaValue,
             };
 
             emailjs.send(serviceId, templateId, templateParams, userId)
@@ -33,7 +35,7 @@ const Contact = () => {
             alert('Please fill in all fields.');
         }
     }
-
+    console.log(process.env.REACT_APP_CAPTCHA_URL)
     return (
         <Layout>
             <div className='container'>
@@ -43,6 +45,11 @@ const Contact = () => {
                             <input type="text" placeholder="Your Name" value={name} onChange={e => setName(e.target.value)} />
                             <input type="email" placeholder="Your email address" value={email} onChange={e => setEmail(e.target.value)} />
                             <textarea placeholder="Your message" value={message} onChange={e => setMessage(e.target.value)}></textarea>
+                            <ReCAPTCHA
+                                sitekey={process.env.CAPTCHA_URL}
+                                onChange={submit}
+
+                            />
                             <button onClick={submit}>Send Message</button>
 
                             <span className={emailSent ? 'visible' : null}>Thank you for your message, we will be in touch in no time!</span>
