@@ -14,9 +14,9 @@ const Contact = () => {
 
     const submit = (e) => {
         if (name && email && message) {
-            const serviceId = process.env.serviceId;
-            const templateId = process.env.templateId;
-            const userId = process.env.userId;
+            const serviceId = 'service_kxcybmy';
+            const templateId = 'template_unl3mif';
+            const userId = 'user_zBTH4MMXVd61RJQjY4za1';
             const templateParams = {
                 name,
                 email,

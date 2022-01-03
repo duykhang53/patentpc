@@ -205,6 +205,14 @@ main {
         text-decoration: none;
     }
 }
+.wp-block-media-text {
+    display: flex;
+    align-items: flex-start;
+    .wp-block-media-text__media {
+        flex-shrink: 0;
+        margin: 0 20px 20px 0;
+    }
+}
 @media (min-width: 1200px) {
     .display-6 {
         font-size: 2.2rem;
@@ -213,5 +221,14 @@ main {
 @media only screen and (max-width: 767px) {
     span.navbar-brand .logo {
         max-width: 100px;
+    }
+    .wp-block-media-text {
+        flex-wrap: wrap;
+        .wp-block-media-text__media {
+            flex-shrink: inherit;
+            img {
+                width: auto !important;
+            }
+        }
     }
 }
