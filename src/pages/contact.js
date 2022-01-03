@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import emailjs from 'emailjs-com'
+import { init } from '@emailjs/browser';
 import Layout from '../components/layout';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'gatsby';
-
+init("user_zBTH4MMXVd61RJQjY4za1");
 
 const Contact = () => {
     const [name, setName] = useState('');
@@ -13,9 +14,9 @@ const Contact = () => {
 
     const submit = (e) => {
         if (name && email && message) {
-            const serviceId = process.env.serviceId;
-            const templateId = process.env.templateId;
-            const userId = process.env.userId;
+            const serviceId = 'service_kxcybmy';
+            const templateId = 'template_unl3mif';
+            const userId = 'user_zBTH4MMXVd61RJQjY4za1';
             const templateParams = {
                 name,
                 email,
