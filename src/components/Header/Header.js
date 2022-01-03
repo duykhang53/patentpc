@@ -14,7 +14,7 @@ const getdata = graphql`
         menu(id: "dGVybToxNg==") {
             menuItems {
                 nodes {
-                    url
+                    path
                     id
                     label
                 }
@@ -41,7 +41,7 @@ const Header = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mx-auto">
                         {datamenu.map(menus => (
-                            <Nav.Link href={menus.url} key={menus.id}>{menus.label}</Nav.Link>
+                            <Nav.Link href={menus.path} key={menus.id}>{menus.label}</Nav.Link>
                         ))}
                     </Nav>
                 </Navbar.Collapse>

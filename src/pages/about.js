@@ -1,6 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from "gatsby";
 import Layout from '../components/layout';
+import Seo from "../components/seo";
 
 const getdata = graphql`
 {
@@ -18,6 +19,7 @@ const About = () => {
   const common = data.wpgraphql.page;
   return (
     <Layout>
+      <Seo title="About" />
       <div className='container py-5'>
         <div className='row justify-content-center'>
           <div className='col-md-12'>
