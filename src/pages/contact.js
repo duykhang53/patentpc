@@ -44,10 +44,10 @@ const Contact = () => {
                             <div className='mb-5'>
                                 <h1 className='display-3 mb-5'>Contact US</h1>
                                 <div className='mb-3'>
-                                    <p className='d-flex h5 align-items-center'><i class="bi bi-geo me-3 display-6"></i><span>4701 Patrick Henry Dr, Building #16, Santa Clara, CA 95054</span></p>
+                                    <p className='d-flex h5 align-items-center'><i className="bi bi-geo me-3 display-6"></i><span>4701 Patrick Henry Dr, Building #16, Santa Clara, CA 95054</span></p>
                                 </div>
                                 <div className='mb-3 contact'>
-                                    <p className='d-flex h5 align-items-center'><i class="bi bi-headset me-3 display-6"></i><Link to="8002343032">800 234-3032</Link></p>
+                                    <p className='d-flex h5 align-items-center'><i className="bi bi-headset me-3 display-6"></i><Link to="8002343032">800 234-3032</Link></p>
                                 </div>
                             </div>
                             <Form >
