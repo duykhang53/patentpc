@@ -4,7 +4,7 @@ import { init } from '@emailjs/browser';
 import Layout from '../components/layout';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'gatsby';
-init("user_ASXLmERL5ByrsNmHHTr9A");
+init("user_zBTH4MMXVd61RJQjY4za1");
 
 const Contact = () => {
     const [name, setName] = useState('');
