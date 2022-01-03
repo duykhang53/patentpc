@@ -7,7 +7,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import { useStaticQuery, graphql } from "gatsby";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhoneSquareAlt } from '@fortawesome/free-solid-svg-icons';
-import Button from 'react-bootstrap/Button';
 
 const getdata = graphql`
 {
@@ -47,7 +46,7 @@ const Header = () => {
                     </Nav>
                 </Navbar.Collapse>
                 <div className='telephone d-flex align-items-center me-3'><FontAwesomeIcon icon={faPhoneSquareAlt} size="2x" style={{ color: "#fff" }} /><a href="tel:8002343032" className='ms-2'> <span>800-234-3032</span></a></div>
-                <Button variant="outline-danger" size="md">Book Free Intoductory Call</Button>
+                <Link className='btn btn-outline-danger' to="/contact">Book Free Intoductory Call</Link>
             </Container>
         </Navbar>
     )
