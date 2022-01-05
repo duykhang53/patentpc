@@ -84,15 +84,15 @@ const Home = () => {
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 4
+      items: 3
     },
     tablet: {
       breakpoint: { max: 1024, min: 600 },
-      items: 3
+      items: 2
     },
     mobile: {
       breakpoint: { max: 600, min: 0 },
-      items: 2
+      items: 1
     }
   };
 
@@ -105,7 +105,7 @@ const Home = () => {
           <div className="container">
             <div className="row text-center">
               <div className="col-md-12">
-                <h1 className="display-1 mb-5">{common.banner.bannerh2}</h1>
+                <h1 className="display-1 mb-md-5 mb-3">{common.banner.bannerh2}</h1>
                 <h3>{common.banner.bannerh3}</h3>
               </div>
             </div>
@@ -161,7 +161,7 @@ const Home = () => {
                 showDots={true}
                 ssr={true}
                 dotListClass="custom-dot-list-style"
-                itemClass="pe-5 align-self-start"
+                itemClass="pe-md-5 align-self-start"
                 arrows={false}
               >{servicesData.map((sData, index) => (
                 <div key={index} className="service-outr align-self-start">

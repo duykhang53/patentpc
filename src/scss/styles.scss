@@ -227,6 +227,20 @@ main {
         font-size: 2.2rem;
     }
 }
+@media only screen and (max-width: 1199px) {
+    .navbar-collapse {
+        flex-basis: 100%;
+        position: absolute;
+        top: 100%;
+        background: #212529;
+        width: 100%;
+        left: 0;
+        border-top: 1px solid #2e2e2e;
+        .navbar-nav {
+            padding-left: 15px;
+        }
+    }
+}
 @media only screen and (max-width: 767px) {
     span.navbar-brand .logo {
         max-width: 100px;
@@ -239,5 +253,79 @@ main {
                 width: auto !important;
             }
         }
+    }
+    .step {
+        text-align: center;
+    }
+    .display-1 {
+        font-size: 3rem;
+    }
+    .display-3 {
+        font-size: 1.525rem;
+    }
+    .display-6 {
+        font-size: 1.2rem;
+    }
+    .testimonial-outr .clientsimage {
+        width: 140px;
+        height: 140px;
+    }
+    .service {
+        text-align: center;
+    }
+    .navbar-toggler {
+        padding: 0.25rem 0.5rem;
+        font-size: 1rem;
+    }
+    .navbar {
+        .btn {
+            font-size: 0.8rem;
+        }
+    }
+    body {
+        padding-top: 56px;
+    }
+}
+@media only screen and (max-width: 560px) {
+    .banner-main {
+        height: 365px;
+        img {
+            height: 100%;
+        }
+    }
+}
+@media only screen and (max-width: 494px) {
+    .telephone svg {
+        display: none;
+    }
+    .navbar > .container {
+        justify-content: center;
+    }
+    .navbar-brand {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    .small-device-header {
+        margin: auto;
+    }
+    body {
+        padding-top: 105px;
+    }
+    .bannerposition {
+        .display-1 {
+            font-size: 2rem;
+        }
+        h3 {
+            font-size: 20px;
+        }
+    }
+}
+@media only screen and (max-width: 374px) {
+    .small-device-header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .telephone {
+        margin-bottom: 15px;
     }
 }
