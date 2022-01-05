@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import Logo from "../../images/logo.png";
 import Container from 'react-bootstrap/Container';
@@ -27,6 +27,7 @@ const getdata = graphql`
 const Header = () => {
     const data = useStaticQuery(getdata);
     const datamenu = data.wpgraphql.menu.menuItems.nodes;
+    const [active, setActive] = useState('default');
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
             <Container>
@@ -41,7 +42,13 @@ const Header = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mx-auto">
                         {datamenu.map(menus => (
-                            <Nav.Link href={menus.path} key={menus.id}>{menus.label}</Nav.Link>
+                            <Nav.Link
+                                href={menus.path}
+                                key={menus.id}
+                                activekey={active}
+                                onSelect={(selectedKey) => setActive(selectedKey)}>
+                                {menus.label}
+                            </Nav.Link>
                         ))}
                     </Nav>
                 </Navbar.Collapse>

@@ -213,6 +213,15 @@ main {
         margin: 0 20px 20px 0;
     }
 }
+.faqs {
+    p {
+        margin-bottom: 25px;
+    }
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+}
 @media (min-width: 1200px) {
     .display-6 {
         font-size: 2.2rem;

@@ -13,6 +13,7 @@ const Contact = () => {
     const [emailSent, setEmailSent] = useState(false);
 
     const submit = (e) => {
+        e.preventDefault();
         if (name && email && message) {
             const serviceId = 'service_kxcybmy';
             const templateId = 'template_unl3mif';
@@ -22,7 +23,7 @@ const Contact = () => {
                 email,
                 message
             };
-            e.preventDefault();
+
             emailjs.send(serviceId, templateId, templateParams, userId)
                 .then(response => console.log(response))
                 .then(error => console.log(error));
