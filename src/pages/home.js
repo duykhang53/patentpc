@@ -226,6 +226,7 @@ const Home = () => {
                     </div>
                   </div>
                 ))}
+                <Link to="https://www.yelp.com/biz_photos/tran-and-associates-santa-clara-3?start=30" className="link-dark" target="_blank">Click here to see more samples of our works</Link>
               </div>
             </div>
           </div>
