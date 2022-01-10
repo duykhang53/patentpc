@@ -4,22 +4,15 @@ import Logo from "../../images/logo.png";
 
 const Footer = () => {
     return (
-        <footer className="py-5 border-top bg-dark">
+        <footer className="py-3 border-top bg-dark">
             <div className='container'>
                 <div className='row'>
                     <div className='col-md-12'>
-                        <div className='row align-items-center'>
-                            <p className="col-md-4 text-muted mb-0">&copy; 2022 Company, Inc</p>
-                            <Link to="/" className="col-md-3 text-center">
+                        <div className='text-center'>
+                            <Link to="/" className='mb-2 d-inline-block'>
                                 <img src={Logo} alt="PatentPc" className="logo" />
                             </Link>
-                            <ul className="nav col-md-5 justify-content-end">
-                                <li className="nav-item"><a href="#" className="nav-link px-2 text-muted">About Us</a></li>
-                                <li className="nav-item"><a href="#" className="nav-link px-2 text-muted">Resources</a></li>
-                                <li className="nav-item"><a href="#" className="nav-link px-2 text-muted">Industries</a></li>
-                                <li className="nav-item"><a href="#" className="nav-link px-2 text-muted">Case Studies</a></li>
-                                <li className="nav-item"><a href="#" className="nav-link px-2 text-muted">Services</a></li>
-                            </ul>
+                            <p className="text-muted mb-0">&copy; 2022 Company, Inc</p>
                         </div>
                     </div>
                 </div>

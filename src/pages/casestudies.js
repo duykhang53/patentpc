@@ -71,7 +71,7 @@ const CaseStudies = () => {
                         </div>
                     </div>
                 </section>
-                <section className="mainSpacing">
+                <section className="mainSpacing bg-light">
                     <div className="container">
                         <div className="row text-center">
                             {common.features.map((cs, index) => {
