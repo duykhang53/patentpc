@@ -28,6 +28,9 @@ h5 {
 img {
     max-width: 100%;
 }
+section:nth-child(even) {
+    background: #f9f9f9;
+}
 .logo {
     display: inline-block;
     max-width: 150px;
