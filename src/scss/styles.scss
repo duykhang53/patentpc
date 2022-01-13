@@ -200,7 +200,7 @@ section:nth-child(even) {
     }
 }
 main {
-    min-height: 80vh;
+    min-height: 85vh;
 }
 .contact {
     a {
@@ -228,6 +228,22 @@ main {
 .mainSpacing {
     padding-top: 80px;
     padding-bottom: 80px;
+}
+.blogOutrFeatured {
+    .card {
+        .card-body {
+            h6 {
+                font-size: 16px;
+                font-weight: 500;
+                margin-bottom: 0;
+                a {
+                    text-decoration: none;
+                    font-weight: 400;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
 }
 @media (min-width: 1200px) {
     .display-6 {
