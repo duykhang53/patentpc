@@ -163,6 +163,7 @@ const Home = () => {
                 dotListClass="custom-dot-list-style"
                 itemClass="pe-md-5 align-self-start"
                 arrows={false}
+                autoPlay={true}
               >{servicesData.map((sData, index) => (
                 <div key={index} className="service-outr align-self-start">
                   <i className={`h1 ${sData.serviceicon}`}></i>
