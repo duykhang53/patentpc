@@ -43,7 +43,7 @@ const Contact = () => {
                     <div className='col-md-8'>
                         <div id="contact-form">
                             <div className='mb-5'>
-                                <h1 className='display-3 mb-5'>Contact US</h1>
+                                <h1 className='display-3 mb-5'>Contact Us</h1>
                                 <div className='mb-3'>
                                     <p className='d-flex h5 align-items-center'><i className="bi bi-geo me-3 display-6"></i><span>4701 Patrick Henry Dr, Building #16, Santa Clara, CA 95054</span></p>
                                 </div>

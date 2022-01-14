@@ -24,7 +24,7 @@ const About = () => {
         <div className='row justify-content-center'>
           <div className='col-md-12'>
             <div className='text-center'>
-              <h1 className='display-3 mb-5'>About US</h1>
+              <h1 className='display-3 mb-5'>About Us</h1>
             </div>
             <div dangerouslySetInnerHTML={{ __html: common.content }} />
           </div>
