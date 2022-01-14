@@ -120,7 +120,10 @@ const Home = () => {
                 Our lawyers have worked on IP protection for
               </h2>
               <div className="row">
-                <Carousel responsive={responsive}>{iplogo.map(images => (
+                <Carousel
+                  responsive={responsive}
+                  autoPlay={true}
+                >{iplogo.map(images => (
                   <div className="text-center client-pic mx-auto" key={images.ipimage.id}> <img src={images.ipimage.sourceUrl} alt={images.ipimage.id} /></div>
                 ))}
                 </Carousel>
@@ -153,7 +156,7 @@ const Home = () => {
               <h2 className="mb-5 display-3">
                 OUR SERVICES &amp; PRODUCTS
               </h2>
-              <p>As a full service Intellectual Property Law Firm, we will handle all your IP needs from start to finish. <br /> For clients looking for cost-effective IP solutions, we also offer our lawyer supported (and patented) Inventive.org® creation system:.</p>
+              <p>As a full service Intellectual Property Law Firm, we will handle all your IP needs from start to finish. <br /> For clients looking for cost-effective IP solutions, we also offer our lawyer supported (and patented).</p>
             </div>
             <div className="col-md-12">
               <Carousel

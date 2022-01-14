@@ -35,5 +35,12 @@ module.exports = {
       },
     },
     "gatsby-source-fontawesome",
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pdf`,
+        path: `${__dirname}/src/pdf/`,
+      },
+    }
   ],
 };

@@ -1,8 +1,22 @@
-import { Link } from 'gatsby'
-import React from 'react'
+
+import React from 'react';
+import { Link } from 'gatsby';
+import { useStaticQuery, graphql } from "gatsby";
 import Logo from "../../images/logo.png";
 
 const Footer = () => {
+    const data = useStaticQuery(graphql`
+    {
+      allFile(filter: { sourceInstanceName: { eq: "pdf" } }) {
+        edges {
+          node {
+            publicURL
+            name
+          }
+        }
+      }
+    }
+  `)
     return (
         <footer className="py-3 border-top bg-dark">
             <div className='container'>
@@ -12,7 +26,19 @@ const Footer = () => {
                             <Link to="/" className='mb-2 d-inline-block'>
                                 <img src={Logo} alt="PatentPc" className="logo" />
                             </Link>
-                            <p className="text-muted mb-0">&copy; 2022 Company, Inc</p>
+
+                            <ul className='list-inline'>
+                                <p class="list-inline-item text-muted">&copy; 2022 Company, Inc</p>
+                                {data.allFile.edges.map((file, index) => {
+                                    return (
+                                        <li key={`pdf-${index}`} className='list-inline-item'>
+                                            <Link to={file.node.publicURL} target="_blank" className='text-muted'>
+                                                {file.node.name}
+                                            </Link>
+                                        </li>
+                                    )
+                                })}
+                            </ul>
                         </div>
                     </div>
                 </div>
