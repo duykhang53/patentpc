@@ -28,7 +28,7 @@ const Footer = () => {
                             </Link>
 
                             <ul className='list-inline'>
-                                <p class="list-inline-item text-muted">&copy; 2022 Patent, PC</p>
+                                <p className="list-inline-item text-muted">&copy; 2022 Patent, PC</p>
                                 {data.allFile.edges.map((file, index) => {
                                     return (
                                         <li key={`pdf-${index}`} className='list-inline-item'>
