@@ -41,7 +41,7 @@ const getdata = graphql`{
           testimonialicon {
             id
             title
-            sourceUrl
+            sourceUrl(size: MEDIUM_LARGE)
           }
         }
         services {
