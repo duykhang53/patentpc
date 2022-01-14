@@ -32,9 +32,9 @@ const Footer = () => {
                                 {data.allFile.edges.map((file, index) => {
                                     return (
                                         <li key={`pdf-${index}`} className='list-inline-item'>
-                                            <Link to={file.node.publicURL} target="_blank" className='text-muted'>
+                                            <a href={file.node.publicURL} target="_blank" className='text-muted'>
                                                 {file.node.name}
-                                            </Link>
+                                            </a>
                                         </li>
                                     )
                                 })}
