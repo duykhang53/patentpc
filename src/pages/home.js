@@ -156,7 +156,7 @@ const Home = () => {
               <h2 className="mb-5 display-3">
                 OUR SERVICES &amp; PRODUCTS
               </h2>
-              <p>As a full service Intellectual Property Law Firm, we will handle all your IP needs from start to finish. <br /> For clients looking for cost-effective IP solutions, we also offer our lawyer supported (and patented).</p>
+              <h4>As a full service Intellectual Property Law Firm, we will handle all your IP needs from start to finish.</h4>
             </div>
             <div className="col-md-12">
               <Carousel
