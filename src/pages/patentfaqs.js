@@ -25,10 +25,10 @@ const Faq = () => {
                 <div className='row justify-content-center'>
                     <div className='col-md-12'>
                         <div className='text-center'>
-                            <h1 className='display-3 mb-5'>Faq</h1>
+                            <h1 className='display-3 mb-5'>FAQs</h1>
                         </div>
                         <div className="container">
-                            <div className='h5 faqs' dangerouslySetInnerHTML={{ __html: common.content }} />
+                            <div className='faqs' dangerouslySetInnerHTML={{ __html: common.content }} />
                         </div>
                     </div>
                 </div>
