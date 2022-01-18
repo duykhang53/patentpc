@@ -15,13 +15,14 @@ const NavLink = props => {
 
 const BlogPage = (props) => {
   const { group, index, first, last, pageCount } = props.pageContext;
-  const previousUrl = pageCount - index == 1 ? '/blog/' : `/blog/${(index - 1).toString()}`
-  const nextUrl = `/blog/${(index + 1).toString()}`
-  //console.log('collection >> ', props)
+  // pageContext.index start at 1, no url /blog/1, just /blog 
+  const previousUrl = (index - 1) <= 1 ? '/blog/' : `/blog/${(index - 1).toString()}`
+  const nextUrl = index < pageCount ? `/blog/${(index + 1).toString()}` : 'javascript: void(0);';
+  const seo = {};
 
   return (
     <Layout>
-      <Seo title="blog" />
+      <Seo title="blog" canonical="/blog/" seo={seo} />
 
       <section className="mainSpacing blogOutrFeatured">
         <div className="container">
