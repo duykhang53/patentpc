@@ -48,7 +48,7 @@ function Post({ data, description, lang, meta, title }) {
 
         ].concat(meta)}
       >
-        <title>Powerpatient | blog | {allBlog.title} </title>
+        <title>PatentPc | blog | {allBlog.title} </title>
       </Helmet>
       <section className="mainSpacing">
         <div className="container">
