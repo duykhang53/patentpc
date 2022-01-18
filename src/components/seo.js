@@ -19,6 +19,7 @@ function Seo({ description, lang, meta, title, canonical, seo }) {
             title
             description
             author
+            siteUrl
           }
         }
       }
@@ -76,7 +77,7 @@ function Seo({ description, lang, meta, title, canonical, seo }) {
       meta={[
         {
           name: `keywords`,
-          content: seo?.title || title,
+          content: seo?.title || 'patent, trademark, trade secret, copyrights',
         },        {
           name: `description`,
           content: seo?.metaDesc || metaDescription,

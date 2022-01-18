@@ -4,7 +4,7 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: `patentpc`,
-    description: `Lawyer Website`,
+    description: `patent, trademark, trade secret, copyrights`,
     author: `Bao Tran`,
     siteUrl: process.env.SITE_URL
   },
