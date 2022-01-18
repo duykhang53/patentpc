@@ -105,7 +105,7 @@ const Industries = () => {
   const seo = data.wpgraphql.page.seo;
   return (
     <Layout>
-      <Seo title="Industries"  description={common.seo.metaDesc} canonical={common.uri} seo={seo}/>
+      <Seo title="Industries"  description={common.seo?.metaDesc} canonical={common.uri} seo={seo}/>
       <div className='container py-5'>
         <div className='row justify-content-center'>
           <div className='col-md-12'>

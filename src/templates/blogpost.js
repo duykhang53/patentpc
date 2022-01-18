@@ -101,9 +101,9 @@ function Post({ data, description, lang, meta, title, pageContext }) {
                 alt="blog"
               />
               <article className="mb-5 text-center">
-                <h4 className="card-title mb-2">
+                <h1 className="card-title mb-2">
                   {allBlog.title}
-                </h4>
+                </h1>
                 <small>{allBlog.date}</small>
               </article>
               <div className="card-text">{Parser(blogContent)}</div>
