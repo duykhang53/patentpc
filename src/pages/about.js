@@ -10,6 +10,23 @@ const getdata = graphql`
       id
       title
       content
+      uri
+      seo {
+        canonical
+        metaDesc
+        metaKeywords
+        title
+        twitterTitle
+        twitterDescription
+        opengraphDescription
+        opengraphPublishedTime
+        opengraphModifiedTime
+        opengraphTitle
+        opengraphType
+        opengraphImage {
+          sourceUrl
+        }
+      }
     }
   }
 }

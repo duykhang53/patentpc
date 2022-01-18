@@ -6,6 +6,7 @@ module.exports = {
     title: `patentpc`,
     description: `Lawyer Website`,
     author: `Bao Tran`,
+    siteUrl: process.env.SITE_URL
   },
   plugins: [
     {

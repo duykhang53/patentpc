@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from '../components/layout';
 import Seo from "../components/seo";
+import LogoImage from '../images/logo.png';
 import { GatsbyImage } from "gatsby-plugin-image";
 
 const NavLink = props => {
@@ -36,13 +37,16 @@ const BlogPage = (props) => {
                       <div className="card h-100">
                         <div className="row g-0 h-100">
                           <div className="col-md-4">
+                          { node.featuredImage?.node.localFile.childImageSharp ?
                             <GatsbyImage className="h-100"
                               image={
-                                node.featuredImage?.node.localFile.childImageSharp
-                                  .gatsbyImageData
+                                node.featuredImage?.node.localFile.childImageSharp?.gatsbyImageData
                               }
                               alt="blog"
                             />
+                            : node.featuredImage?.node.mediaItemUrl ? <div class="h-100"><img src={node.featuredImage?.node.mediaItemUrl} class="h-100"/></div>
+                            : <div class="h-100"><img src={LogoImage} class="h-100"/></div>
+                          }
                           </div>
                           <div className="col-md-8 align-self-center">
                             <div className="card-body">

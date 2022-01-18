@@ -8,6 +8,23 @@ import Seo from "../components/seo";
 const getdata = graphql`{
   wpgraphql {
     page(id: "cG9zdDozMjQ4") {
+      uri
+      seo {
+        canonical
+        metaDesc
+        metaKeywords
+        title
+        twitterTitle
+        twitterDescription
+        opengraphDescription
+        opengraphPublishedTime
+        opengraphModifiedTime
+        opengraphTitle
+        opengraphType
+        opengraphImage {
+          sourceUrl
+        }
+      }
       homepage {
         banner {
           bannerh2

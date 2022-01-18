@@ -10,6 +10,23 @@ const getdata = graphql`
     page(id: "cG9zdDozMjI1") {
       id
       title
+      uri
+      seo {
+        canonical
+        metaDesc
+        metaKeywords
+        title
+        twitterTitle
+        twitterDescription
+        opengraphDescription
+        opengraphPublishedTime
+        opengraphModifiedTime
+        opengraphTitle
+        opengraphType
+        opengraphImage {
+          sourceUrl
+        }
+      }
       industries {
         maincategory {
           mainsubcategoryheading
@@ -85,10 +102,10 @@ const Industries = () => {
   const consumerGoodsServices = data.wpgraphql.page.industries.consumerGoodsServices;
   const chemicalIndustrial = data.wpgraphql.page.industries.chemicalIndustrial;
   const biotechnology = data.wpgraphql.page.industries.biotechnology;
-
+  const seo = data.wpgraphql.page.seo;
   return (
     <Layout>
-      <Seo title="Industries" />
+      <Seo title="Industries"  description={common.seo.metaDesc} canonical={common.uri} seo={seo}/>
       <div className='container py-5'>
         <div className='row justify-content-center'>
           <div className='col-md-12'>

@@ -4,11 +4,14 @@ import SEO from "../components/seo";
 import "../scss/styles.scss";
 import Home from './home';
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <Home />
-  </Layout>
-);
+const IndexPage = () => {
+  const seo = { metaDesc: 'Inddex' }
+  return (
+    <Layout>
+      <SEO title="Home"  canonical='' seo={seo} />
+      <Home />
+    </Layout>
+  )
+};
 
 export default IndexPage;

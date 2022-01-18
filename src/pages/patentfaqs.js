@@ -11,6 +11,23 @@ const getdata = graphql`
       id
       title
       content
+      uri
+      seo {
+        canonical
+        metaDesc
+        metaKeywords
+        title
+        twitterTitle
+        twitterDescription
+        opengraphDescription
+        opengraphPublishedTime
+        opengraphModifiedTime
+        opengraphTitle
+        opengraphType
+        opengraphImage {
+          sourceUrl
+        }
+      }    
     }
   }
 }
@@ -20,7 +37,7 @@ const Faq = () => {
     const common = data.wpgraphql.page;
     return (
         <Layout>
-            <Seo title="Faq" />
+            <Seo title="Faq" description={common.seo.metaDesc} canonical={common.uri} seo={common.seo}  />
             <div className='container py-5'>
                 <div className='row justify-content-center'>
                     <div className='col-md-12'>
