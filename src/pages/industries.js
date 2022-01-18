@@ -96,6 +96,7 @@ const getdata = graphql`
   `
 const Industries = () => {
   const data = useStaticQuery(getdata);
+  const page = data.wpgraphql.page;
   const common = data.wpgraphql.page.industries.maincategory;
   const pharmaceuticals = data.wpgraphql.page.industries.pharmaceuticals;
   const healthcareMedicalDevices = data.wpgraphql.page.industries.healthcareMedicalDevices;
@@ -105,7 +106,7 @@ const Industries = () => {
   const seo = data.wpgraphql.page.seo;
   return (
     <Layout>
-      <Seo title="Industries"  description={common.seo?.metaDesc} canonical={common.uri} seo={seo}/>
+      <Seo title="Industries"  description={page.seo?.metaDesc} canonical={page.uri} seo={seo}/>
       <div className='container py-5'>
         <div className='row justify-content-center'>
           <div className='col-md-12'>

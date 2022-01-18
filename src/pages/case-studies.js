@@ -63,10 +63,11 @@ const getdata = graphql`
 const CaseStudies = () => {
     const data = useStaticQuery(getdata);
     const common = data.wpgraphql.page.caseStudies
+    const page = data.wpgraphql.page;
     return (
         <>
             <Layout>
-                <Seo title="Case Studies" />
+                <Seo title="Case Studies" description={page.seo.metaDesc} canonical={page.uri} seo={page.seo} />
 
 
                 <section className="mainSpacing">

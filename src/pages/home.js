@@ -86,6 +86,7 @@ const getdata = graphql`{
 `
 const Home = () => {
   const data = useStaticQuery(getdata);
+  const page = data.wpgraphql.page;
   const common = data.wpgraphql.page.homepage
   const iplogo = data.wpgraphql.page.homepage.ipProtection;
   const advLegal = data.wpgraphql.page.homepage.advancedLegaltech;
@@ -115,7 +116,7 @@ const Home = () => {
 
   return (
     <>
-      <Seo title="Home" />
+      <Seo title="Home" description={page.seo.metaDesc} canonical={page.uri} seo={page.seo}/>
       <div className="banner-main">
         <img src={common.banner.bannerimage.sourceUrl} alt={common.banner.bannerimage.title} />
         <div className="bannerposition">
