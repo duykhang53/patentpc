@@ -9,7 +9,7 @@ import Parser  from 'react-html-parser'
 function Post({ data, description, lang, meta, title, pageContext }) {
   const allBlog = data.wpPost
   const seo = allBlog.seo;
-  //console.log('data >> ', allBlog)
+  console.log('data >> ', allBlog)
   //const wpMeta = allBlog.seo.metaDesc
   
   // Update blog content
@@ -17,7 +17,7 @@ function Post({ data, description, lang, meta, title, pageContext }) {
 
   // use title as metaDesc if not
   const wpMeta = seo.metaDesc || allBlog.title
-  const wpCanonical = allBlog.seo.canonical
+  const wpCanonical = `/blog${allBlog.uri}`
   return (
     <Layout>
       <Helmet
