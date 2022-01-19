@@ -14,7 +14,8 @@ function Post({ data, description, lang, meta, title, pageContext }) {
   
   // Update blog content
   var blogContent = updateBlogContent(allBlog.content)
-
+  console.log(blogContent);
+  
   // use title as metaDesc if not
   const wpMeta = seo.metaDesc || allBlog.title
   const wpCanonical = `/blog${allBlog.uri}`
@@ -98,7 +99,7 @@ function Post({ data, description, lang, meta, title, pageContext }) {
                   allBlog.featuredImage?.node.localFile.childImageSharp
                     .gatsbyImageData
                 }
-                alt="blog"
+                alt="patent, trademark, trade secret, copyrights"
               />
               <article className="mb-5 text-center">
                 <h1 className="card-title mb-2">
@@ -141,7 +142,7 @@ function updateBlogContent(content) {
    * Disclaimer content
    */
   const disclaimerHtml = `
-    <div><a href="/patentfaqs/" target="_blank">Patent FAQs</a> - <a href="/tmfaqs/" target="_blank">Trademark FAQs</a></div>
+    <div><a href="/patentfaqs/" rel="noreferrer" target="_blank">Patent FAQs</a> - <a href="/tmfaqs/" rel="noreferrer" target="_blank">Trademark FAQs</a></div>
     <hr>
     <p class="small fw-normal text-info"><small>Disclaimer:</small></p>
     <p class="small fw-normal text-info"><small>
