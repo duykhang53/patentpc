@@ -2,11 +2,14 @@ import React, { useState } from 'react'
 import emailjs from 'emailjs-com'
 import { init } from '@emailjs/browser';
 import Layout from '../components/layout';
+import SEO from "../components/seo";
 import Form from 'react-bootstrap/Form';
 import { Link } from 'gatsby';
 init("user_zBTH4MMXVd61RJQjY4za1");
 
 const Contact = () => {
+    const seo = { metaDesc: 'Patents, Trademarks, Copyrights, Trade Secrets' };
+    //
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
@@ -38,6 +41,7 @@ const Contact = () => {
     }
     return (
         <Layout>
+            <SEO title="Contact US"  canonical='/contact' seo={seo} />
             <div className='container py-5'>
                 <div className='row justify-content-center'>
                     <div className='col-md-8'>

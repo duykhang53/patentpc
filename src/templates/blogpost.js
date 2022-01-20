@@ -35,7 +35,7 @@ function Post({ data, description, lang, meta, title, pageContext }) {
         meta={[
           {
             name: `keywords`,
-            content: seo.title,
+            content: seo.title || seo.metaDesc,
           },
           {
             name: `description`,
