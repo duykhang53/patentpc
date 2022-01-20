@@ -5,7 +5,7 @@ import "../scss/styles.scss";
 import Home from './home';
 
 const IndexPage = () => {
-  const seo = { metaDesc: 'Inddex' }
+  const seo = { metaDesc: 'Patents, Trademarks, Copyrights, Trade Secrets' }
   return (
     <Layout>
       <SEO title="Home"  canonical='' seo={seo} />

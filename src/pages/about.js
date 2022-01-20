@@ -34,9 +34,10 @@ const getdata = graphql`
 const About = () => {
   const data = useStaticQuery(getdata);
   const common = data.wpgraphql.page;
+  
   return (
     <Layout>
-      <Seo title="About" />
+      <Seo title="About"  description={common.seo.metaDesc} canonical={common.uri} seo={common.seo} />
       <div className='container py-5 about-outr'>
         <div className='row justify-content-center'>
           <div className='col-md-12'>

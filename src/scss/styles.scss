@@ -13,6 +13,9 @@ body {
 h1 {
     font-size: 50px;
 }
+h1, .entry-content h1, .entry-content h1 {
+    text-transform: capitalize;
+}
 h2 {
     font-size: 40px;
 }
@@ -169,6 +172,16 @@ section:nth-child(even) {
     }
 }
 
+.abpost-index {
+    background-color: #ECECEC;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    margin: 1.5rem 15%;
+    h2 {
+        font-size: 1rem!important;
+        text-decoration: none;
+    }
+}
 #contact-form {
     font-family: sans-serif;
     padding: 20px;

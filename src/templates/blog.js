@@ -29,7 +29,7 @@ const BlogPage = (props) => {
           <div className="row mb-5">
             <div className="col-md-12">
               <div className="text-center">
-                <h2 className="display-1 mb-md-5 mb-3">Latest Blog Post</h2>
+                <h1 className="display-1 mb-md-5 mb-3">Latest Blog Post</h1>
               </div>
               <div className="row">
                 {

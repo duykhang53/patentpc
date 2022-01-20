@@ -68,13 +68,11 @@ const CaseStudies = () => {
         <>
             <Layout>
                 <Seo title="Case Studies" description={page.seo.metaDesc} canonical={page.uri} seo={page.seo} />
-
-
                 <section className="mainSpacing">
                     <div className="container">
                         <div className="row">
                             <div className="col-md-8 mb-4 mb-md-0 align-self-center">
-                                <h2>{common.caseHeading}</h2>
+                                <h1>{common.caseHeading}</h1>
                                 <figure>
                                     <img src={common.caseLogo.guid} alt={common.caseLogo.title} />
                                 </figure>
