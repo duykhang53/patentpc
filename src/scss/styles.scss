@@ -172,6 +172,16 @@ section:nth-child(even) {
     }
 }
 
+.abpost-index {
+    background-color: #ECECEC;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    margin: 1.5rem 15%;
+    h2 {
+        font-size: 1rem!important;
+        text-decoration: none;
+    }
+}
 #contact-form {
     font-family: sans-serif;
     padding: 20px;
