@@ -35,7 +35,6 @@ const getdata = graphql`
 const OfficeAction = () => {
     const data = useStaticQuery(getdata);
     const common = data.wpgraphql.page;
-    console.log(common.content)
     return (
         <Layout>
             <Seo title={common.title} description={common.seo.metaDesc} canonical={common.uri} seo={common.seo}  />

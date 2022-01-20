@@ -14,7 +14,6 @@ function Post({ data, description, lang, meta, title, pageContext }) {
   
   // Update blog content
   var blogContent = updateBlogContent(allBlog.content)
-  console.log(blogContent);
   
   // use title as metaDesc if not
   const wpMeta = seo.metaDesc || allBlog.title

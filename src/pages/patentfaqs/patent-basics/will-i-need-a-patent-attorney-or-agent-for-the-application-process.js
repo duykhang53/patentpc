@@ -1,13 +1,13 @@
 import React from 'react';
-import Layout from '../../components/layout';
-import Seo from "../../components/seo";
+import Layout from '../../../components/layout';
+import Seo from "../../../components/seo";
 import { useStaticQuery, graphql } from "gatsby";
 
 
 const getdata = graphql`
 {
   wpgraphql {
-    page(id: "cG9zdDo4NTg1") {
+    page(id: "cG9zdDo4Njgx") {
       id
       title
       content
@@ -32,7 +32,7 @@ const getdata = graphql`
   }
 }
   `
-const IPBasic = () => {
+const WillINeed = () => {
     const data = useStaticQuery(getdata);
     const common = data.wpgraphql.page;
     return (
@@ -55,4 +55,4 @@ const IPBasic = () => {
     );
 };
 
-export default IPBasic;
+export default WillINeed;

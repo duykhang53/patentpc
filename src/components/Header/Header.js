@@ -38,7 +38,6 @@ const getdata = graphql`
 const Header = () => {
     const data = useStaticQuery(getdata);
     const datamenu = data.wpgraphql.menu.menuItems.nodes;
-    console.log(datamenu)
     const [active, setActive] = useState('default');
     return (
         <Navbar collapseOnSelect expand="xl" bg="dark" variant="dark" fixed="top">

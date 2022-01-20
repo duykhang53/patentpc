@@ -35,7 +35,6 @@ const getdata = graphql`
 const Faq = () => {
     const data = useStaticQuery(getdata);
     const common = data.wpgraphql.page;
-    console.log(common.content)
     const replaceWPUrl = (content) => {
       // check server side rendering
       // https://github.com/gatsbyjs/gatsby/issues/19487
