@@ -77,7 +77,7 @@ function Seo({ description, lang, meta, title, canonical, seo }) {
       meta={[
         {
           name: `keywords`,
-          content: seo?.title || 'patent, trademark, trade secret, copyrights',
+          content: seo?.title || 'Patents, Trademarks, Copyrights, Trade Secrets',
         },        {
           name: `description`,
           content: seo?.metaDesc || metaDescription,

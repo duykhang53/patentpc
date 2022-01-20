@@ -4,6 +4,7 @@ import Logo from "../../images/logo.png";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown'
 import { useStaticQuery, graphql } from "gatsby";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhoneSquareAlt } from '@fortawesome/free-solid-svg-icons';
@@ -14,9 +15,19 @@ const getdata = graphql`
         menu(id: "dGVybToxNg==") {
             menuItems {
                 nodes {
-                    path
-                    id
                     label
+                    url
+                    parentId
+                    id
+                    path
+                    childItems {
+                      nodes {
+                        url
+                        label
+                        id
+                        path
+                      }
+                    }
                 }
             }
         }
@@ -27,6 +38,7 @@ const getdata = graphql`
 const Header = () => {
     const data = useStaticQuery(getdata);
     const datamenu = data.wpgraphql.menu.menuItems.nodes;
+    console.log(datamenu)
     const [active, setActive] = useState('default');
     return (
         <Navbar collapseOnSelect expand="xl" bg="dark" variant="dark" fixed="top">
@@ -38,7 +50,7 @@ const Header = () => {
                 </Navbar.Brand>
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mx-auto">
-                        {datamenu.map(menus => (
+                        {datamenu.map(menus => !menus.parentId && !menus.childItems.nodes.length ? 
                             <Nav.Link
                                 href={menus.path}
                                 key={menus.id}
@@ -46,7 +58,16 @@ const Header = () => {
                                 onSelect={(selectedKey) => setActive(selectedKey)}>
                                 {menus.label}
                             </Nav.Link>
-                        ))}
+                            : menus.childItems.nodes.length > 0 ? 
+                                <NavDropdown title={menus.label}>
+                                    {menus.childItems.nodes.map(childItem => (
+                                        <NavDropdown.Item href={childItem.path}>
+                                            {childItem.label}
+                                        </NavDropdown.Item>
+                                    ))}
+                                </NavDropdown>
+                            : null
+                        )}
                     </Nav>
                 </Navbar.Collapse>
                 <div className='ms-auto d-flex small-device-header'>
