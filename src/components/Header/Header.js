@@ -44,7 +44,7 @@ const Header = () => {
             <Container>
                 <Navbar.Brand>
                     <Link to="/" >
-                        <img src={Logo} alt="PatentPc" className="logo" />
+                        <img src={Logo} alt="PatentPc" className="logo" width="150" height="33" />
                     </Link>
                 </Navbar.Brand>
                 <Navbar.Collapse id="responsive-navbar-nav">
