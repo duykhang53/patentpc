@@ -89,7 +89,7 @@ function Post({ data, description, lang, meta, title, pageContext }) {
       <div class="col-md-4 pt-3 pb-3" style="background-color: #EEEEEE">
         See How PatentPC can help grow your company valuation and protect your
         business with our expert lawyers and their advanced AI workflow.
-        <p class="mt-5"><a target="_blank" href="https://calendly.com/patentpc/30min" class="btn btn-warning" style="width: 90%;">Request A Meeting</a></p>
+        <p class="mt-5"><a rel="noreferrer" target="_blank" href="https://calendly.com/patentpc/30min" class="btn btn-warning" style="width: 90%;">Request A Meeting</a></p>
       </div>
     </div>
     `;
