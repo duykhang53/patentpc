@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '../components/layout';
 import Seo from "../components/seo";
 import { useStaticQuery, graphql } from "gatsby";
-
+import Parser  from 'react-html-parser'
 
 const getdata = graphql`
 {
@@ -66,7 +66,7 @@ const Faq = () => {
                             <h1 className='display-3 mb-5'>Patent FAQs</h1>
                         </div>
                         <div className="container">
-                            <div className='faqs' dangerouslySetInnerHTML={{ __html: replaceWPUrl(common.content) }} />
+                            <div className='faqs'>{Parser(replaceWPUrl(common.content))}</div>
                         </div>
                     </div>
                 </div>
