@@ -10,7 +10,7 @@ import Parser  from 'react-html-parser'
 function Post({ data, description, lang, meta, title, pageContext }) {
   const allBlog = data.wpPost
   // console.log('data >> ', allBlog)
-  console.log(allBlog.content)
+  // console.log(allBlog.content)
 
   const getSubTitle = (content) => {
     // check server side rendering
@@ -125,16 +125,36 @@ function Post({ data, description, lang, meta, title, pageContext }) {
     }
 
     /**
-     * Center img
+     * 
      */
-    var pTags = contentObj.getElementsByTagName('p');
-    for (const p of pTags) {
-      if( p.getElementsByTagName('img').length > 0) {
-        // there is an image
-        p.classList.add("text-center");
-        // break;
+    const gatsbyImgObjs = contentObj.getElementsByClassName('gatsby-image-wrapper');
+    if (gatsbyImgObjs && gatsbyImgObjs.length) {
+      const gatsbyImgObj = gatsbyImgObjs[0];
+      // get img src set
+      const imgs = gatsbyImgObj.getElementsByTagName('img');
+      const imgValue = (imgs && imgs.length > 1 ? imgs[1].dataset.src : null);
+
+      // assign img
+      if (imgValue) {
+        imgs[0].setAttribute('src', imgValue);
+
+        // center
+        gatsbyImgObjs.setAttribute('display', 'block');
+        gatsbyImgObjs.setAttribute('width', '50%');
       }
     }
+
+    /**
+     * Center img
+     */
+    // var pTags = contentObj.getElementsByTagName('p');
+    // for (const p of pTags) {
+    //   if( p.getElementsByTagName('img').length > 0) {
+    //     // there is an image
+    //     p.classList.add("text-center");
+    //     // break;
+    //   }
+    // }
 
     // No DIV CTA Tag
     // Insert before the last p tag
@@ -149,8 +169,6 @@ function Post({ data, description, lang, meta, title, pageContext }) {
      */
     contentObj.appendChild(disclaimerObj);
 
-    // for debug
-    console.log(contentObj.innerHTML);
     //
     return contentObj.innerHTML;
   }
