@@ -10,7 +10,7 @@ import Parser  from 'react-html-parser'
 function Post({ data, description, lang, meta, title, pageContext }) {
   const allBlog = data.wpPost
   // console.log('data >> ', allBlog)
-  // console.log(allBlog.content)
+  console.log(allBlog.content)
 
   const getSubTitle = (content) => {
     // check server side rendering
@@ -149,6 +149,8 @@ function Post({ data, description, lang, meta, title, pageContext }) {
      */
     contentObj.appendChild(disclaimerObj);
 
+    // for debug
+    console.log(contentObj.innerHTML);
     //
     return contentObj.innerHTML;
   }
