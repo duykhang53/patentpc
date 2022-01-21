@@ -139,8 +139,8 @@ function Post({ data, description, lang, meta, title, pageContext }) {
         imgs[0].setAttribute('src', imgValue);
 
         // center
-        gatsbyImgObjs.setAttribute('display', 'block');
-        gatsbyImgObjs.setAttribute('width', '50%');
+        gatsbyImgObj.setAttribute('display', 'block');
+        gatsbyImgObj.setAttribute('width', '50%');
       }
     }
 
