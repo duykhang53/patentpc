@@ -1,16 +1,16 @@
 import React from "react"
 import Layout from '../components/layout';
 import PropTypes from "prop-types"
-import { graphql } from "gatsby"
+import { assetPrefix, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image";
 import { Helmet } from "react-helmet"
+import Seo from "../components/seo";
 import Parser  from 'react-html-parser'
 
 function Post({ data, description, lang, meta, title, pageContext }) {
   const allBlog = data.wpPost
-  const seo = allBlog.seo;
-  console.log('data >> ', allBlog)
-  console.log(allBlog.content)
+  // console.log('data >> ', allBlog)
+  // console.log(allBlog.content)
 
   const getSubTitle = (content) => {
     // check server side rendering
@@ -152,80 +152,10 @@ function Post({ data, description, lang, meta, title, pageContext }) {
     //
     return contentObj.innerHTML;
   }
-  
-  // use title as metaDesc if not
-  const wpMeta = seo.metaDesc || allBlog.title
-  const wpCanonical = `/blog${allBlog.uri}`
+
   return (
     <Layout>
-      <Helmet
-        htmlAttributes={{
-          lang,
-        }}
-        title={allBlog.title || seo.title}
-        link={[
-          {
-            rel: `canonical`,
-            href: `${pageContext.siteUrl}${wpCanonical}`,
-          }
-        ]}
-        meta={[
-          {
-            name: `keywords`,
-            content: seo.title || seo.metaDesc,
-          },
-          {
-            name: `description`,
-            content: wpMeta,
-          },
-          {
-            property: `og:locale`,
-            content: 'en_US',
-          },            {
-            property: `og:type`,
-            content: seo.opengraphType,
-          },          
-          {
-            property: `og:title`,
-            content: seo.title || allBlog.title,
-          },
-          {
-            property: `og:description`,
-            content: seo.opengraphDescription || wpMeta,
-          },
-          {
-            property: `og:url`,
-            content: `${pageContext.siteUrl}${wpCanonical}`,
-          },
-          {
-            property: `article:published_time`,
-            content: `${seo.opengraphPublishedTime}`,
-          },
-          {
-            property: `og:image`,
-            content: `${seo.opengraphImage?.sourceUrl}`,
-          },
-          {
-            property: `og:image:width`,
-            content: `400`,
-          },
-          {
-            property: `og:image:height`,
-            content: `400`,
-          },
-          {
-            name: `twitter:card`,
-            content: `summary_large_image`,
-          },
-          {
-            name: `twitter:title`,
-            content: title ?? allBlog.title,
-          },
-
-        ].concat(meta)}
-      >
-        <title>PatentPc | blog | {allBlog.title} </title>
-      </Helmet>
+      <Seo title={ `PatentPc | blog | ${allBlog.title}` } canonical={allBlog.uri} seo={allBlog.seo} />
       <section className="mainSpacing">
         <div className="container">
           <div className="row">

@@ -23,7 +23,6 @@ const BlogPage = (props) => {
   return (
     <Layout>
       <Seo title="blog" canonical="/blog/" seo={seo} />
-
       <section className="mainSpacing blogOutrFeatured">
         <div className="container">
           <div className="row mb-5">
