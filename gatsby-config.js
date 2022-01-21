@@ -13,6 +13,9 @@ module.exports = {
       resolve: "gatsby-source-wordpress",
       options: {
         url: process.env.WORDPRESS_URL,
+        production: {
+          allow404Images: true
+        }
       },
     },
     "gatsby-plugin-sass",
@@ -36,6 +39,13 @@ module.exports = {
       },
     },
     "gatsby-source-fontawesome",
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

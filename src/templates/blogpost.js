@@ -89,7 +89,7 @@ function Post({ data, description, lang, meta, title, pageContext }) {
       <div class="col-md-4 pt-3 pb-3" style="background-color: #EEEEEE">
         See How PatentPC can help grow your company valuation and protect your
         business with our expert lawyers and their advanced AI workflow.
-        <p class="mt-5"><a target="_blank" href="https://calendly.com/patentpc/30min" class="btn btn-warning" style="width: 90%;">Request A Meeting</a></p>
+        <p class="mt-5"><a rel="noreferrer" target="_blank" href="https://calendly.com/patentpc/30min" class="btn btn-warning" style="width: 90%;">Request A Meeting</a></p>
       </div>
     </div>
     `;
@@ -125,16 +125,32 @@ function Post({ data, description, lang, meta, title, pageContext }) {
     }
 
     /**
+     * 
+     */
+    const gatsbyImgObjs = contentObj.getElementsByClassName('gatsby-image-wrapper');
+    if (gatsbyImgObjs && gatsbyImgObjs.length) {
+      const gatsbyImgObj = gatsbyImgObjs[0];
+      // get img src set
+      const imgs = gatsbyImgObj.getElementsByTagName('img');
+      const imgValue = (imgs && imgs.length > 1 ? imgs[1].dataset.src : null);
+
+      // assign img
+      if (imgValue) {
+        imgs[0].setAttribute('src', imgValue);
+      }
+    }
+
+    /**
      * Center img
      */
     var pTags = contentObj.getElementsByTagName('p');
-    for (const p of pTags) {
-      if( p.getElementsByTagName('img').length > 0) {
-        // there is an image
-        p.classList.add("text-center");
-        // break;
-      }
-    }
+    // for (const p of pTags) {
+    //   if( p.getElementsByTagName('img').length > 0) {
+    //     // there is an image
+    //     p.classList.add("text-center");
+    //     // break;
+    //   }
+    // }
 
     // No DIV CTA Tag
     // Insert before the last p tag

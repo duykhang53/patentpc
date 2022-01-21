@@ -182,6 +182,11 @@ section:nth-child(even) {
         text-decoration: none;
     }
 }
+.gatsby-image-wrapper {
+    display: block !important;
+    width: 50% !important;
+    margin: auto !important;
+}
 #contact-form {
     font-family: sans-serif;
     padding: 20px;
