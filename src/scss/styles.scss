@@ -78,6 +78,10 @@ section:nth-child(even) {
 }
 .client-pic {
     max-width: 180px;
+    img {
+        width: auto;
+        height: auto;
+    }
 }
 .react-multi-carousel-track {
     align-items: center;
