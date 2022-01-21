@@ -24,7 +24,7 @@ const Footer = () => {
                     <div className='col-md-12'>
                         <div className='text-center'>
                             <Link to="/" className='mb-2 d-inline-block'>
-                                <img src={Logo} alt="PatentPc" className="logo" />
+                                <img src={Logo} alt="PatentPc" className="logo" width="150" height="33" />
                             </Link>
 
                             <ul className='list-inline'>
