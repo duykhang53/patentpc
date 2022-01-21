@@ -147,7 +147,7 @@ function Post({ data, description, lang, meta, title, pageContext }) {
     /**
      * Center img
      */
-    // var pTags = contentObj.getElementsByTagName('p');
+    var pTags = contentObj.getElementsByTagName('p');
     // for (const p of pTags) {
     //   if( p.getElementsByTagName('img').length > 0) {
     //     // there is an image
