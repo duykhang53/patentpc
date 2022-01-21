@@ -118,7 +118,7 @@ const Home = () => {
     <>
       <Seo title="Home" description={page.seo.metaDesc} canonical={page.uri} seo={page.seo} />
       <div className="banner-main">
-        <img src={common.banner.bannerimage.sourceUrl} alt={common.banner.bannerimage.title} width='auto' height='auto' />
+        <img src={common.banner.bannerimage.sourceUrl} alt={common.banner.bannerimage.title} />
         <div className="bannerposition">
           <div className="container">
             <div className="row text-center">
@@ -142,7 +142,7 @@ const Home = () => {
                   responsive={responsive}
                   autoPlay={true}
                 >{iplogo.map(images => (
-                  <div className="text-center client-pic mx-auto" key={images.ipimage.id}> <img src={images.ipimage.sourceUrl} alt={images.ipimage.id} width='auto' height='auto' /></div>
+                  <div className="text-center client-pic mx-auto" key={images.ipimage.id}> <img src={images.ipimage.sourceUrl} alt={images.ipimage.id} width='180' height='180' /></div>
                 ))}
                 </Carousel>
               </div>
@@ -156,7 +156,7 @@ const Home = () => {
             {advLegal.map((advL, index) => (
               <div className="col-md-3 mb-4" key={index}>
                 <div className="step">
-                  <figure className="me-3 text-center"><img src={advL.icon.sourceUrl} alt={advL.icon.id} className="w-25" width='auto' height='auto' /></figure>
+                  <figure className="me-3 text-center"><img src={advL.icon.sourceUrl} alt={advL.icon.id} className="w-25" width='75' height='75' /></figure>
                   <div>
                     <h4 className="h4">{advL.heading}</h4>
                     <p>{advL.description}</p>
@@ -212,7 +212,7 @@ const Home = () => {
                   <div key={index} className="service-outr align-self-start">
                     <p className="mb-5 display-6">{tData.paragraph}</p>
                     <figure className="clientsimage">
-                      <img src={tData.testimonialicon.sourceUrl} alt={tData.testimonialicon.id} width='auto' height='auto' />
+                      <img src={tData.testimonialicon.sourceUrl} alt={tData.testimonialicon.id} width='220' height='220' />
                     </figure>
                     <h6 className="h6 my-3">{tData.heading}</h6>
                     <small>{tData.subheading}</small>
@@ -238,7 +238,7 @@ const Home = () => {
                   <div key={index} className="work-outr col-md-4 mb-5">
                     <div className="card">
                       <figure className="card-img-top">
-                        <img src={wData.sampleworksimages.sourceUrl} alt={wData.sampleworksimages.id} width='auto' height='auto' />
+                        <img src={wData.sampleworksimages.sourceUrl} alt={wData.sampleworksimages.id} width='415' height='400' />
                       </figure>
                       <div className="card-body">
                         <h6 className="display-6 my-3">{wData.worksheading}</h6>
