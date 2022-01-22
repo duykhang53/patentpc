@@ -116,6 +116,16 @@ function Seo({ description, lang, meta, title, canonical, seo }) {
         }
       ].concat(meta, addOnMeta)}
     >
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-217833805-1"></script>
+      <script>
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-217833805-1');
+        `}
+      </script>
       <script>
         {`
           !function(f,b,e,v,n,t,s)

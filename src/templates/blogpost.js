@@ -52,14 +52,14 @@ function Post({ data, description, lang, meta, title, pageContext }) {
     const disclaimerHtml = `
       <div><a href="/patentfaqs/" rel="noreferrer" target="_blank">Patent FAQs</a> - <a href="/tmfaqs/" rel="noreferrer" target="_blank">Trademark FAQs</a></div>
       <hr>
-      <p class="small fw-normal"><small>Disclaimer:</small></p>
-      <p class="small fw-normal"><small>
+      <p class="disclaimer-text fw-normal">Disclaimer:</p>
+      <p class="disclaimer-text fw-normal">
       The information provided on this blog does not, and is not intended to, constitute legal advice; instead, all information, 
       content, and materials available on this site are for general informational purposes only. Information on this website may not 
       constitute the most up-to-date legal or other information. This website contains links to other third-party websites. 
       Such links are only for the reader, user or browser; we do not recommend or endorse the contents of the third-party sites.
-      </small></p>
-      <p class="small fw-normal"><small>
+      </p>
+      <p class="disclaimer-text fw-normal">
       Readers of this website should contact their attorney to obtain advice for any particular legal matter. 
       No reader, user, or browser of this site should act or refrain from acting based on information on this site 
       without first seeking legal advice from counsel in the relevant jurisdiction. Only your attorney can provide 
@@ -67,12 +67,12 @@ function Post({ data, description, lang, meta, title, pageContext }) {
       to your particular situation. Use of and access to this website or any links or resources within this site do 
       not create an attorney-client relationship between the reader, user, or browser and website authors, contributors, 
       contributing law firms, and their respective employers.
-      </small></p>
-      <p class="small fw-normal"><small>
+      </p>
+      <p class="disclaimer-text fw-normal">
       The views expressed at or through this site are those of the authors writing in their individual capacities only – not this site. 
       All liability for actions taken or not taken based on the contents of this site are expressly disclaimed. 
       The content on this posting is provided “as is;” no representations are made that the content is error-free.
-      </small></p>
+      </p>
     `;
 
     const disclaimerObj = document.createElement( 'div' );
