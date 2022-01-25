@@ -24,8 +24,6 @@ const CookieConsent = ({ accepted }) => {
             </div>
           </div>
           <p>This website uses cookie to enhance user experience and to analyze performance and traffic on our website. 
-            We also share information about your use of our site with our social media, advertising and analytics partners. 
-            &nbsp;<a href="/static/2d783a3da303d66f97bc547c0ef784fb/Privacy.pdf" target="_blank">More Info</a>
           </p>
           <button type="button" class="btn btn-danger w-100"  onClick={accepet} >Accept Cookies</button>
         </div>
