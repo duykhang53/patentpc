@@ -189,7 +189,7 @@ function Post({ data, description, lang, meta, title, pageContext }) {
                   {allBlog.title}
                 </h1>
                 <p>---</p>
-                <h5>{getSubTitle(allBlog.content)}</h5>
+                <h2 class="h5">{getSubTitle(allBlog.content)}</h2>
                 <small>{allBlog.date}</small>
               </article>
               <div className="card-text">{Parser(updateBlogContent(allBlog.content))}</div>
