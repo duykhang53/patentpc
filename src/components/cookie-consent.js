@@ -5,6 +5,12 @@ const CookieConsent = ({ accepted }) => {
   const [showResults, setShowResults] = React.useState(false)
 
   const accepet = () => {
+    // "document" is not available during server side rendering.
+    // https://github.com/gatsbyjs/gatsby/issues/19487
+    if (typeof window === 'undefined' || !window.document) {
+      return;
+    }
+    //
     document.cookie = 'accept_cookie=true; expires=Fri, 31 Dec 9999 23:59:59 GMT'
     setShowResults(true)
   }
