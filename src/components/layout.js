@@ -13,6 +13,11 @@ import CookieConsent from './cookie-consent'
 
 const Layout = ({ children }) => {
   const checkAlreadyAcceptCookie = () => {
+    // "document" is not available during server side rendering.
+    // https://github.com/gatsbyjs/gatsby/issues/19487
+    if (typeof window === 'undefined' || !window.document) {
+      return;
+    }
     var match = document.cookie.match(new RegExp('(^| )accept_cookie=([^;]+)'));
     console.log(`match: ${match}`)
     if (match) {
