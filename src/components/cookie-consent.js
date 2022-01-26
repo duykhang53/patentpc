@@ -15,7 +15,7 @@ const CookieConsent = ({ accepted }) => {
     setShowResults(true)
   }
   return (
-    (accepted === false) & !showResults ? <div class="row">
+    (accepted === false) & !showResults ? <div className="row">
       <div class="col-md-4 col-sm-12 cookie-consent">
         <div class="p-3 pb-4 bg-custom text-white">
           <div class="row">
