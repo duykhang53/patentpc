@@ -16,16 +16,16 @@ const CookieConsent = ({ accepted }) => {
   }
   return (
     (accepted === false) & !showResults ? <div className="row">
-      <div class="col-md-4 col-sm-12 cookie-consent">
-        <div class="p-3 pb-4 bg-custom text-white">
-          <div class="row">
-            <div class="col-12 text-end">
-              <a class="text-white text-decoration-none" href="javascript: void(0);" onClick={accepet}>X</a>
+      <div className="col-md-4 col-sm-12 cookie-consent">
+        <div className="p-3 pb-4 bg-custom text-white">
+          <div className="row">
+            <div className="col-12 text-end">
+              <a className="text-white text-decoration-none" href="javascript: void(0);" onClick={accepet}>X</a>
             </div>
           </div>
           <p>This website uses cookie to enhance user experience and to analyze performance and traffic on our website. 
           </p>
-          <button type="button" class="btn btn-danger w-100"  onClick={accepet} >Accept Cookies</button>
+          <button type="button" className="btn btn-danger w-100"  onClick={accepet} >Accept Cookies</button>
         </div>
       </div>
     </div>

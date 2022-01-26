@@ -71,7 +71,7 @@ const Header = () => {
                 </Navbar.Collapse>
                 <div className='ms-auto d-flex small-device-header'>
                     <div className='telephone d-flex align-items-center me-3'><FontAwesomeIcon icon={faPhoneSquareAlt} size="2x" style={{ color: "#fff" }} /><a href="tel:8002343032" className='ms-2'> <span>800-234-3032</span></a></div>
-                    <Link className='btn btn-outline-warning' to="https://calendly.com/patentpc/one-on-one-with-attorney-tran" target="_blank">Book Free Intoductory Call</Link>
+                    <Link className='btn btn-outline-warning' to="/premeeting">Book Free Intoductory Call</Link>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" className='ms-2' />
                 </div>
             </Container>
