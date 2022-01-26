@@ -196,6 +196,7 @@ section:nth-child(even) {
     position: fixed;
     right: 0;
     border-radius: 4px;
+    z-index: 9999;
     .bg-custom{
         background-color:#130f40;
         }
