@@ -124,8 +124,7 @@ function Post({ data, description, lang, meta, title, pageContext }) {
      * 
      */
     const gatsbyImgObjs = contentObj.getElementsByClassName('gatsby-image-wrapper');
-    if (gatsbyImgObjs && gatsbyImgObjs.length) {
-      const gatsbyImgObj = gatsbyImgObjs[0];
+    for (const gatsbyImgObj of  gatsbyImgObjs) {
       // get img src set
       const imgs = gatsbyImgObj.getElementsByTagName('img');
       const imgValue = (imgs && imgs.length > 1 ? imgs[1].dataset.src : null);
