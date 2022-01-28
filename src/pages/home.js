@@ -4,6 +4,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import TestimonialCarousel from "../components/testimonialCarousel/testimonialCarousel";
 import Seo from "../components/seo";
+import Accordion from '../utils/Accordion';
 
 const getdata = graphql`{
   wpgraphql {
@@ -62,10 +63,15 @@ const getdata = graphql`{
           }
         }
         services {
-          button
           heading
           paragraph
           serviceicon
+          pagelink {
+            ... on WPGraphQL_Page {
+              id
+              content
+            }
+          }
         }
         works {
           worksparagraph
@@ -190,7 +196,8 @@ const Home = () => {
                   <i className={`h1 ${sData.serviceicon}`}></i>
                   <h4 className="h4 my-3">{sData.heading}</h4>
                   <p>{sData.paragraph}</p>
-                  <Link to={sData.button} className="btn btn-danger" role="button" target="_blank">Read More</Link>
+                  {/* <Link to={sData.button} className="btn btn-danger" role="button" target="_blank">Read More</Link> */}
+                  <Accordion content={<div dangerouslySetInnerHTML={{ __html: sData.pagelink.content }} />} />
                 </div>
               ))}
               </Carousel>
