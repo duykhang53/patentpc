@@ -116,6 +116,11 @@ function Seo({ description, lang, meta, title, canonical, seo }) {
         }
       ].concat(meta, addOnMeta)}
     >
+      <noscript>
+        {`
+          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K2D8QMF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        `}
+      </noscript>
       <script>
         {`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

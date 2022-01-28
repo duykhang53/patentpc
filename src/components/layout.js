@@ -27,29 +27,6 @@ const Layout = ({ children }) => {
     }
   }
 
-  const insertNoScriptGoogleTag = () => {
-    // "document" is not available during server side rendering.
-    // https://github.com/gatsbyjs/gatsby/issues/19487
-    if (typeof window === 'undefined' || !window.document) {
-      return undefined;
-    }
-    // check already insert
-    if (!document.getElementById('googleNoScript')) {
-      var noscript = document.createElement('noscript')
-      noscript.id = 'googleNoScript';
-      var iframe = document.createElement('iframe')
-      iframe.setAttribute('src', "https://www.googletagmanager.com/ns.html?id=GTM-K2D8QMF")
-      iframe.setAttribute("height", "0")
-      iframe.setAttribute("width", "0")
-      iframe.setAttribute("style", "display:none;visibility:hidden")
-      noscript.appendChild(iframe)
-      document.body.prepend(noscript)
-    }
-  }
-
-  // execute insert noscript google tag
-  insertNoScriptGoogleTag();
-
   return (
     <>
       <Header />
