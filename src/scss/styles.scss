@@ -188,6 +188,24 @@ section:nth-child(even) {
         text-decoration: none;
     }
 }
+.disclaimer-text {
+    font-size: .65em;
+}
+.cookie-consent{
+    bottom: 0;
+    position: fixed;
+    right: 0;
+    border-radius: 4px;
+    z-index: 9999;
+    .bg-custom{
+        background-color:#130f40;
+        }
+    .fas{
+        cursor: pointer;
+        font-size: 24px;
+    }
+}
+
 .gatsby-image-wrapper {
     display: block !important;
     width: 50% !important;
