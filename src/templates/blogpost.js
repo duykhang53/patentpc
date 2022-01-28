@@ -35,6 +35,9 @@ function Post({ data, description, lang, meta, title, pageContext }) {
     return value;
   };
 
+  // get h2 sub title
+  const h2SubTitle = getSubTitle(allBlog.content);
+
   // Update blog content
   const updateBlogContent = (content) => {
     // check server side rendering
@@ -184,7 +187,7 @@ function Post({ data, description, lang, meta, title, pageContext }) {
                   {allBlog.title}
                 </h1>
                 <p>---</p>
-                <h2 class="h5">{getSubTitle(allBlog.content)}</h2>
+                { h2SubTitle ? <h2 class="h5">{h2SubTitle}</h2> : null }
                 <small>{allBlog.date}</small>
               </article>
               <div className="card-text">{Parser(updateBlogContent(allBlog.content))}</div>
