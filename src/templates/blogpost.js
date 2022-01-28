@@ -30,9 +30,6 @@ function Post({ data, description, lang, meta, title, pageContext }) {
       const h2 = abposts[0];
       // get value
       value = h2.innerText;
-
-      // remove this tag
-      h2.parentNode.removeChild(h2);
     }
 
     return value;
@@ -101,11 +98,10 @@ function Post({ data, description, lang, meta, title, pageContext }) {
     var contentObj = document.createElement( 'div' );
     contentObj.innerHTML = content;
     
-    // remove abpost-category
+    // Do not remove this tag, but set hidden
     var abposts = contentObj.getElementsByClassName('abpost-category');
     for (const a of abposts) {
-      // remove this tag
-      a.remove();
+      a.style.display = "none"
     }
 
     // insert call to action box
@@ -128,8 +124,7 @@ function Post({ data, description, lang, meta, title, pageContext }) {
      * 
      */
     const gatsbyImgObjs = contentObj.getElementsByClassName('gatsby-image-wrapper');
-    if (gatsbyImgObjs && gatsbyImgObjs.length) {
-      const gatsbyImgObj = gatsbyImgObjs[0];
+    for (const gatsbyImgObj of  gatsbyImgObjs) {
       // get img src set
       const imgs = gatsbyImgObj.getElementsByTagName('img');
       const imgValue = (imgs && imgs.length > 1 ? imgs[1].dataset.src : null);
