@@ -15,6 +15,9 @@ module.exports = {
         url: process.env.WORDPRESS_URL,
         production: {
           allow404Images: true
+        },
+        html: {
+          createStaticFiles: true
         }
       },
     },
