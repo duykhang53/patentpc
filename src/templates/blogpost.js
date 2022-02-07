@@ -5,7 +5,7 @@ import { assetPrefix, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image";
 import { Helmet } from "react-helmet"
 import Seo from "../components/seo";
-import Parser  from 'react-html-parser'
+import { Parser } from 'html-to-react'
 
 function Post({ data, description, lang, meta, title, pageContext }) {
   const allBlog = data.wpPost
@@ -36,7 +36,7 @@ function Post({ data, description, lang, meta, title, pageContext }) {
   };
 
   // get h2 sub title
-  const h2SubTitle = getSubTitle(allBlog.content);
+  const subTitle = getSubTitle(allBlog.content);
 
   // Update blog content
   const updateBlogContent = (content) => {
@@ -167,6 +167,8 @@ function Post({ data, description, lang, meta, title, pageContext }) {
     return contentObj.innerHTML;
   }
 
+  const cardContent = new Parser().parse(updateBlogContent(allBlog.content));
+
   return (
     <Layout>
       <Seo title={ `PatentPc | blog | ${allBlog.title}` } canonical={allBlog.uri} seo={allBlog.seo} />
@@ -187,10 +189,12 @@ function Post({ data, description, lang, meta, title, pageContext }) {
                   {allBlog.title}
                 </h1>
                 <p>---</p>
-                { h2SubTitle ? <h2 class="h5">{h2SubTitle}</h2> : null }
+                { subTitle ? <h2 class="h5">{subTitle}</h2> : null }
                 <small>{allBlog.date}</small>
               </article>
-              <div className="card-text">{Parser(updateBlogContent(allBlog.content))}</div>
+              <div className="card-text">
+                { cardContent }
+              </div>
             </div>
           </div>
         </div>

@@ -41,6 +41,7 @@
     "gatsby-transformer-remark": "^5.4.0",
     "gatsby-transformer-sharp": "^4.4.0",
     "html-react-parser": "^1.4.5",
+    "html-to-react": "^1.4.8",
     "react": "^17.0.1",
     "react-bootstrap": "^2.0.4",
     "react-bootstrap-v5": "^1.4.0",

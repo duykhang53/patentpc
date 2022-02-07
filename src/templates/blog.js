@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from '../components/layout';
 import Seo from "../components/seo";
-import LogoImage from '../images/logo.png';
+import LogoImage from '../images/icon.png';
 import { GatsbyImage } from "gatsby-plugin-image";
 
 const NavLink = props => {
