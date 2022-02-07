@@ -37,6 +37,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
             createPage({
                 path: `/blog/${node.slug}`,
                 component: Post,
+                defer: true,
                 context: {
                     slug: node.slug,
                     siteUrl: process.env.SITE_URL
